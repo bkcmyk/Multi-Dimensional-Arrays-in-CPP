@@ -1,0 +1,51 @@
+// Barkha Kumari
+// 24070123029
+// EnTC A1
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int r, c;
+    cout << "Enter number of rows: ";
+    cin >> r;
+    cout << "Enter number of columns: ";
+    cin >> c;
+
+    if (r < 2) {
+        cout << "Error: Matrix does not have at least 2 rows to compare.\n";
+        return 0;
+    }
+
+    int A[100][100];
+    cout << "Enter " << r * c << " elements of the matrix:\n";
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++)
+            cin >> A[i][j];
+
+    bool same = true;
+    for (int j = 0; j < c; j++) {
+        if (A[0][j] != A[1][j]) {
+            same = false;
+            break;
+        }
+    }
+
+    if (same)
+        cout << "\nFirst row is the same as the second row.\n";
+    else
+        cout << "\nFirst row is NOT the same as the second row.\n";
+
+    return 0;
+}
+
+/* OUTPUT
+
+Enter number of rows: 3
+Enter number of columns: 2
+Enter 6 elements of the matrix:
+1 2 3
+4 5 6
+
+First row is NOT the same as the second row.
+*/
